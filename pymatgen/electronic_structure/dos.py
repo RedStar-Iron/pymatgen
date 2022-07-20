@@ -716,7 +716,7 @@ class CompleteDos(Dos):
         t2g_dos = []
         eg_dos = []
         for s, atom_dos in self.pdos.items():
-            if s == site:
+            if s.coords[0] == site.coords[0] and s.coords[1] == site.coords[1] and s.coords[2] == site.coords[2]:
                 for orb, pdos in atom_dos.items():
                     if orb in (Orbital.dxy, Orbital.dxz, Orbital.dyz):
                         t2g_dos.append(pdos)
